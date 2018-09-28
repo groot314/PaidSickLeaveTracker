@@ -31,6 +31,7 @@
 			this.removeButton = new System.Windows.Forms.Button();
 			this.EditButton = new System.Windows.Forms.Button();
 			this.employeeNameTxt = new System.Windows.Forms.TextBox();
+			this.EmployeeDDL = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// removeButton
@@ -58,16 +59,27 @@
 			this.employeeNameTxt.Size = new System.Drawing.Size(100, 22);
 			this.employeeNameTxt.TabIndex = 7;
 			// 
+			// EmployeeDDL
+			// 
+			this.EmployeeDDL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.EmployeeDDL.FormattingEnabled = true;
+			this.EmployeeDDL.Location = new System.Drawing.Point(59, 83);
+			this.EmployeeDDL.Name = "EmployeeDDL";
+			this.EmployeeDDL.Size = new System.Drawing.Size(121, 24);
+			this.EmployeeDDL.TabIndex = 10;
+			// 
 			// EmployeeEditForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(446, 303);
+			this.Controls.Add(this.EmployeeDDL);
 			this.Controls.Add(this.removeButton);
 			this.Controls.Add(this.EditButton);
 			this.Controls.Add(this.employeeNameTxt);
 			this.Name = "EmployeeEditForm";
 			this.Text = "EditEmployeeForm";
+			this.Load += new System.EventHandler(this.EmployeeEditForm_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -78,5 +90,6 @@
 		private System.Windows.Forms.Button removeButton;
 		private System.Windows.Forms.Button EditButton;
 		private System.Windows.Forms.TextBox employeeNameTxt;
+		private System.Windows.Forms.ComboBox EmployeeDDL;
 	}
 }

@@ -47,6 +47,7 @@
 			this.employeeAddButton.TabIndex = 1;
 			this.employeeAddButton.Text = "Add";
 			this.employeeAddButton.UseVisualStyleBackColor = true;
+			this.employeeAddButton.Click += new System.EventHandler(this.employeeAddButton_Click);
 			// 
 			// EmployeeAddForm
 			// 

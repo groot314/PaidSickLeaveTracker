@@ -16,5 +16,10 @@ namespace PaidSickLeaveTracker
 		{
 			InitializeComponent();
 		}
+
+		private void EmployeeEditForm_Load(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

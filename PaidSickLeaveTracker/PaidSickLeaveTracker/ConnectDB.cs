@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Data;
+using System.Diagnostics;
 
 namespace PaidSickLeaveTracker
 {
@@ -20,6 +22,22 @@ namespace PaidSickLeaveTracker
 		public MySqlConnection Connection
 		{
 			get { return con; }
+		}
+
+		public void runCommand(MySqlCommand cmd)
+		{
+			try
+			{
+				if (con.State == ConnectionState.Closed)
+				{
+					con.Open();
+				}
+				cmd.ExecuteNonQuery();
+			}
+			catch (Exception ex)
+			{
+				Debug.Write(ex.Message);
+			}
 		}
 
 	}
