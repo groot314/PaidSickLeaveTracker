@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PaidSickLeaveTracker
 {
-	public partial class Form1 : Form
+	public partial class SickHoursEdit : Form
 	{
-		public Form1()
+		public SickHoursEdit()
 		{
 			InitializeComponent();
 		}
