@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Data;
 
 
 namespace PaidSickLeaveTracker
@@ -70,17 +69,9 @@ namespace PaidSickLeaveTracker
 
 		private void refreshEmployeeDDL()
 		{
-			ConnectDB dbcon = new ConnectDB();
-			MySqlDataAdapter selectEmployees = new MySqlDataAdapter("Select * From Employees", dbcon.Connection);
+            Functions fun = new Functions();
 
-
-			DataTable dt = new DataTable();
-
-			selectEmployees.Fill(dt);
-
-			employeeDDL.DataSource = dt;
-			employeeDDL.DisplayMember = "Name";
-			employeeDDL.ValueMember = "EmployeeID";
-		}
+            fun.fillEmployeeDDL(ref employeeDDL);
+        }
 	}
 }
