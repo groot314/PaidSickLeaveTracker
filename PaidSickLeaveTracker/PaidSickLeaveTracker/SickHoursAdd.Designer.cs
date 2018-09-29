@@ -65,6 +65,7 @@
 			this.AddButton.TabIndex = 8;
 			this.AddButton.Text = "Add";
 			this.AddButton.UseVisualStyleBackColor = true;
+			this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
 			// 
 			// SickHoursAdd
 			// 
@@ -77,6 +78,7 @@
 			this.Controls.Add(this.employeeDDL);
 			this.Name = "SickHoursAdd";
 			this.Text = "SickHoursAdd";
+			this.Load += new System.EventHandler(this.SickHoursAdd_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
