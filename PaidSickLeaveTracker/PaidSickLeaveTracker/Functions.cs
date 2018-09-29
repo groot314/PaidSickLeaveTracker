@@ -30,5 +30,13 @@ namespace PaidSickLeaveTracker
             employeeDDL.DisplayMember = "Name";
             employeeDDL.ValueMember = "EmployeeID";
         }
+
+        public void fillGridView(MySqlDataAdapter selectCmd, ref DataGridView gv)
+        {
+            DataTable dt = new DataTable();
+            selectCmd.Fill(dt);
+
+            gv.DataSource = dt;
+        }
     }
 }

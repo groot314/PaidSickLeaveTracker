@@ -31,9 +31,16 @@ namespace PaidSickLeaveTracker
 			employeeDDL.DataSource = dt;
 			employeeDDL.DisplayMember = "Name";
 			employeeDDL.ValueMember = "EmployeeID";
+
+            refreshViewHours();
 		}
 
-		private void AddButton_Click(object sender, EventArgs e)
+        private void employeeDDL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refreshViewHours();
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
 		{
 			ConnectDB dbcon = new ConnectDB();
 
@@ -46,6 +53,23 @@ namespace PaidSickLeaveTracker
 
 
 			hoursTxt.Text = "";
+
+            refreshViewHours();
 		}
-	}
+
+
+        private void refreshViewHours()
+        {
+            ConnectDB dbcon = new ConnectDB();
+            Functions fun = new Functions();
+
+            MySqlDataAdapter selectEmployeesWorkedHours = new MySqlDataAdapter("Select Name, EmployeeHours As Hours From Employees WHERE EmployeeID=@id",dbcon.Connection);
+
+            selectEmployeesWorkedHours.SelectCommand.Parameters.AddWithValue("@id", employeeDDL.SelectedValue);
+
+            fun.fillGridView(selectEmployeesWorkedHours, ref workedHoursGV);
+
+
+        }
+    }
 }

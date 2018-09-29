@@ -39,6 +39,5 @@ namespace PaidSickLeaveTracker
 				Debug.Write(ex.Message);
 			}
 		}
-
 	}
 }
