@@ -31,11 +31,12 @@
             this.EditButton = new System.Windows.Forms.Button();
             this.employeeDDL = new System.Windows.Forms.ComboBox();
             this.workedHoursTxt = new System.Windows.Forms.TextBox();
+            this.yearSelect = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(345, 124);
+            this.EditButton.Location = new System.Drawing.Point(409, 125);
             this.EditButton.Margin = new System.Windows.Forms.Padding(2);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(56, 19);
@@ -48,7 +49,7 @@
             // 
             this.employeeDDL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.employeeDDL.FormattingEnabled = true;
-            this.employeeDDL.Location = new System.Drawing.Point(29, 122);
+            this.employeeDDL.Location = new System.Drawing.Point(11, 123);
             this.employeeDDL.Margin = new System.Windows.Forms.Padding(2);
             this.employeeDDL.Name = "employeeDDL";
             this.employeeDDL.Size = new System.Drawing.Size(92, 21);
@@ -57,16 +58,26 @@
             // 
             // workedHoursTxt
             // 
-            this.workedHoursTxt.Location = new System.Drawing.Point(186, 123);
+            this.workedHoursTxt.Location = new System.Drawing.Point(314, 125);
             this.workedHoursTxt.Name = "workedHoursTxt";
             this.workedHoursTxt.Size = new System.Drawing.Size(100, 20);
             this.workedHoursTxt.TabIndex = 10;
+            // 
+            // yearSelect
+            // 
+            this.yearSelect.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.yearSelect.Location = new System.Drawing.Point(108, 124);
+            this.yearSelect.Name = "yearSelect";
+            this.yearSelect.Size = new System.Drawing.Size(200, 20);
+            this.yearSelect.TabIndex = 11;
+            this.yearSelect.ValueChanged += new System.EventHandler(this.yearSelect_ValueChanged);
             // 
             // WorkedHoursEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 267);
+            this.Controls.Add(this.yearSelect);
             this.Controls.Add(this.workedHoursTxt);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.employeeDDL);
@@ -83,5 +94,6 @@
 		private System.Windows.Forms.Button EditButton;
 		private System.Windows.Forms.ComboBox employeeDDL;
         private System.Windows.Forms.TextBox workedHoursTxt;
+        private System.Windows.Forms.DateTimePicker yearSelect;
     }
 }

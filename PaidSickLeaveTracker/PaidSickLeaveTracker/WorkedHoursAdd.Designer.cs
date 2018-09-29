@@ -32,12 +32,13 @@
             this.hoursTxt = new System.Windows.Forms.TextBox();
             this.employeeDDL = new System.Windows.Forms.ComboBox();
             this.workedHoursGV = new System.Windows.Forms.DataGridView();
+            this.yearSelect = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.workedHoursGV)).BeginInit();
             this.SuspendLayout();
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(322, 42);
+            this.AddButton.Location = new System.Drawing.Point(406, 43);
             this.AddButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(56, 19);
@@ -48,7 +49,7 @@
             // 
             // hoursTxt
             // 
-            this.hoursTxt.Location = new System.Drawing.Point(207, 43);
+            this.hoursTxt.Location = new System.Drawing.Point(326, 42);
             this.hoursTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.hoursTxt.Name = "hoursTxt";
             this.hoursTxt.Size = new System.Drawing.Size(76, 20);
@@ -58,7 +59,7 @@
             // 
             this.employeeDDL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.employeeDDL.FormattingEnabled = true;
-            this.employeeDDL.Location = new System.Drawing.Point(77, 41);
+            this.employeeDDL.Location = new System.Drawing.Point(11, 43);
             this.employeeDDL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.employeeDDL.Name = "employeeDDL";
             this.employeeDDL.Size = new System.Drawing.Size(92, 21);
@@ -75,11 +76,21 @@
             this.workedHoursGV.Size = new System.Drawing.Size(490, 92);
             this.workedHoursGV.TabIndex = 9;
             // 
+            // yearSelect
+            // 
+            this.yearSelect.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.yearSelect.Location = new System.Drawing.Point(108, 44);
+            this.yearSelect.Name = "yearSelect";
+            this.yearSelect.Size = new System.Drawing.Size(200, 20);
+            this.yearSelect.TabIndex = 10;
+            this.yearSelect.ValueChanged += new System.EventHandler(this.yearSelect_ValueChanged);
+            // 
             // WorkedHoursAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 247);
+            this.Controls.Add(this.yearSelect);
             this.Controls.Add(this.workedHoursGV);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.hoursTxt);
@@ -99,5 +110,6 @@
 		private System.Windows.Forms.TextBox hoursTxt;
 		private System.Windows.Forms.ComboBox employeeDDL;
         private System.Windows.Forms.DataGridView workedHoursGV;
+        private System.Windows.Forms.DateTimePicker yearSelect;
     }
 }

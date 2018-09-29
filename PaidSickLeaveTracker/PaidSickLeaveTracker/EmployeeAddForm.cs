@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Data;
 
 namespace PaidSickLeaveTracker
 {
@@ -23,7 +22,7 @@ namespace PaidSickLeaveTracker
 		{
 			ConnectDB db = new ConnectDB();
 
-			MySqlCommand cmd = new MySqlCommand("Insert Into Employees (Name, EmployeeHours) Values (@name, 0)", db.Connection);
+			MySqlCommand cmd = new MySqlCommand("Insert Into Employees (Name) Values (@name)", db.Connection);
 
 			cmd.Parameters.AddWithValue("@name", employeeNameTxt.Text);
 
