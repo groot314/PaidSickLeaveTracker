@@ -29,6 +29,8 @@ namespace PaidSickLeaveTracker
 
 			db.runCommand(cmd);
 
+
+			employeeNameTxt.Text = "";
 		}
 	}
 }

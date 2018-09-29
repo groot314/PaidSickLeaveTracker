@@ -22,19 +22,8 @@ namespace PaidSickLeaveTracker
 
 		private void EmployeeEditForm_Load(object sender, EventArgs e)
 		{
-            ConnectDB dbcon = new ConnectDB();
-            MySqlDataAdapter selectEmployees = new MySqlDataAdapter("Select * From Employees", dbcon.Connection);
-
-
-            DataTable dt = new DataTable();
-
-            selectEmployees.Fill(dt);
-
-            employeeDDL.DataSource = dt;
-            employeeDDL.DisplayMember = "Name";
-            employeeDDL.ValueMember = "EmployeeID";
-
-            
+			refreshEmployeeDDL();
+			 
             employeeNameTxt.Text = employeeDDL.Text;
               
 		}
@@ -49,6 +38,12 @@ namespace PaidSickLeaveTracker
             updateEmployee.Parameters.AddWithValue("@id", employeeDDL.SelectedValue);
 
             dbcon.runCommand(updateEmployee);
+
+			int index = employeeDDL.SelectedIndex;
+
+			refreshEmployeeDDL();
+
+			employeeDDL.SelectedIndex = index;
         }
 
         private void removeButton_Click(object sender, EventArgs e)
@@ -60,6 +55,32 @@ namespace PaidSickLeaveTracker
             updateEmployee.Parameters.AddWithValue("@id", employeeDDL.SelectedValue);
 
             dbcon.runCommand(updateEmployee);
+
+			employeeNameTxt.Text = "";
+
+			refreshEmployeeDDL();
         }
-    }
+
+		private void employeeDDL_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			employeeNameTxt.Text = employeeDDL.Text;
+		}
+
+
+
+		private void refreshEmployeeDDL()
+		{
+			ConnectDB dbcon = new ConnectDB();
+			MySqlDataAdapter selectEmployees = new MySqlDataAdapter("Select * From Employees", dbcon.Connection);
+
+
+			DataTable dt = new DataTable();
+
+			selectEmployees.Fill(dt);
+
+			employeeDDL.DataSource = dt;
+			employeeDDL.DisplayMember = "Name";
+			employeeDDL.ValueMember = "EmployeeID";
+		}
+	}
 }
