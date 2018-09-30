@@ -41,15 +41,16 @@
             this.employeeDDL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.employeeDDL.FormattingEnabled = true;
             this.employeeDDL.Location = new System.Drawing.Point(36, 48);
-            this.employeeDDL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.employeeDDL.Margin = new System.Windows.Forms.Padding(2);
             this.employeeDDL.Name = "employeeDDL";
             this.employeeDDL.Size = new System.Drawing.Size(92, 21);
             this.employeeDDL.TabIndex = 5;
+            this.employeeDDL.SelectedIndexChanged += new System.EventHandler(this.employeeDDL_SelectedIndexChanged);
             // 
             // datePicker
             // 
             this.datePicker.Location = new System.Drawing.Point(132, 49);
-            this.datePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datePicker.Margin = new System.Windows.Forms.Padding(2);
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(151, 20);
             this.datePicker.TabIndex = 6;
@@ -57,7 +58,7 @@
             // hoursTxt
             // 
             this.hoursTxt.Location = new System.Drawing.Point(287, 48);
-            this.hoursTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hoursTxt.Margin = new System.Windows.Forms.Padding(2);
             this.hoursTxt.Name = "hoursTxt";
             this.hoursTxt.Size = new System.Drawing.Size(76, 20);
             this.hoursTxt.TabIndex = 7;
@@ -65,7 +66,7 @@
             // AddButton
             // 
             this.AddButton.Location = new System.Drawing.Point(367, 48);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(56, 19);
             this.AddButton.TabIndex = 8;
@@ -93,7 +94,7 @@
             this.Controls.Add(this.hoursTxt);
             this.Controls.Add(this.datePicker);
             this.Controls.Add(this.employeeDDL);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SickHoursAdd";
             this.Text = "SickHoursAdd";
             this.Load += new System.EventHandler(this.SickHoursAdd_Load);

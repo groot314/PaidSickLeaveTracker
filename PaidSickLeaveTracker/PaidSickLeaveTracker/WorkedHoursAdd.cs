@@ -20,19 +20,12 @@ namespace PaidSickLeaveTracker
             yearSelect.ShowUpDown = true;
 		}
 
+        private WorkedHoursFunctions wfun = new WorkedHoursFunctions();
+        private EmployeeFunctions efun = new EmployeeFunctions();
+
 		private void WorkedHoursAdd_Load(object sender, EventArgs e)
 		{
-			ConnectDB dbcon = new ConnectDB();
-			MySqlDataAdapter selectEmployees = new MySqlDataAdapter("Select * From Employees", dbcon.Connection);
-
-
-			DataTable dt = new DataTable();
-
-			selectEmployees.Fill(dt);
-
-			employeeDDL.DataSource = dt;
-			employeeDDL.DisplayMember = "Name";
-			employeeDDL.ValueMember = "EmployeeID";
+            efun.fillEmployeeDDL(ref employeeDDL);
 
             refreshViewHours();
 		}
@@ -49,36 +42,7 @@ namespace PaidSickLeaveTracker
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            ConnectDB dbcon = new ConnectDB();
-
-            MySqlDataAdapter selectRow = new MySqlDataAdapter("Select WorkedID From WorkedHours WHERE EmployeeID=@id AND Year=@year", dbcon.Connection);//select to see if row exist
-            selectRow.SelectCommand.Parameters.AddWithValue("@id", employeeDDL.SelectedValue);
-            selectRow.SelectCommand.Parameters.AddWithValue("@year", yearSelect.Value.Date.ToString("yyyy"));
-
-            DataTable workedHoursDT = new DataTable();
-            selectRow.Fill(workedHoursDT);
-
-
-            if (workedHoursDT.Rows.Count == 0)//row doesn't exist
-            { 
-                MySqlCommand addSickHours = new MySqlCommand("Insert Into WorkedHours (EmployeeID, Year, Hours) Values (@id, @year, @hours)", dbcon.Connection);
-
-                addSickHours.Parameters.AddWithValue("@hours", Int32.Parse(hoursTxt.Text));
-                addSickHours.Parameters.AddWithValue("@id", employeeDDL.SelectedValue);
-                addSickHours.Parameters.AddWithValue("@year", yearSelect.Value.Date.ToString("yyyy"));
-
-                dbcon.runCommand(addSickHours);
-            }
-            else//update row since a row does exist
-            {
-                MySqlCommand addSickHours = new MySqlCommand("Update WorkedHours SET Hours=Hours+@hours WHERE EmployeeID=@id AND Year=@year", dbcon.Connection);
-
-                addSickHours.Parameters.AddWithValue("@hours", Int32.Parse(hoursTxt.Text));
-                addSickHours.Parameters.AddWithValue("@id", employeeDDL.SelectedValue);
-                addSickHours.Parameters.AddWithValue("@year", yearSelect.Value.Date.ToString("yyyy"));
-
-                dbcon.runCommand(addSickHours);
-            }
+            WorkedHoursFunctions.updateWorkedHours.add(Convert.ToDouble(hoursTxt.Text), yearSelect.Value.ToString("yyyy"), employeeDDL.SelectedValue);
 
 			hoursTxt.Text = "";
 
@@ -88,18 +52,7 @@ namespace PaidSickLeaveTracker
 
         private void refreshViewHours()
         {
-            ConnectDB dbcon = new ConnectDB();
-            Functions fun = new Functions();
-
-            MySqlDataAdapter selectEmployeesWorkedHours = new MySqlDataAdapter("Select Employees.Name, WorkedHours.Hours From WorkedHours "+
-                "Join Employees On WorkedHours.EmployeeID = Employees.EmployeeID WHERE WorkedHours.EmployeeID=@id AND Year=@year",dbcon.Connection);
-
-            selectEmployeesWorkedHours.SelectCommand.Parameters.AddWithValue("@id", employeeDDL.SelectedValue);
-            selectEmployeesWorkedHours.SelectCommand.Parameters.AddWithValue("@year", yearSelect.Value.Date.ToString("yyyy"));
-
-            fun.fillGridView(selectEmployeesWorkedHours, ref workedHoursGV);
-
-
+            wfun.fillWorkedHoursGV(ref workedHoursGV, yearSelect.Value.ToString("yyyy"), employeeDDL.SelectedValue);
         }
     }
 }

@@ -18,16 +18,8 @@ namespace PaidSickLeaveTracker
 			InitializeComponent();
 		}
 
-		private void employeeAddButton_Click(object sender, EventArgs e)
+        private void employeeAddButton_Click(object sender, EventArgs e)
 		{
-			ConnectDB db = new ConnectDB();
-
-			MySqlCommand cmd = new MySqlCommand("Insert Into Employees (Name) Values (@name)", db.Connection);
-
-			cmd.Parameters.AddWithValue("@name", employeeNameTxt.Text);
-
-			db.runCommand(cmd);
-
             outputLabel.Text = employeeNameTxt.Text + " Added";
 
 			employeeNameTxt.Text = "";

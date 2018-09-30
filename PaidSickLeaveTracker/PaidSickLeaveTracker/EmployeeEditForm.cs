@@ -19,7 +19,9 @@ namespace PaidSickLeaveTracker
 			InitializeComponent();
 		}
 
-		private void EmployeeEditForm_Load(object sender, EventArgs e)
+        private EmployeeFunctions eFun = new EmployeeFunctions();
+
+        private void EmployeeEditForm_Load(object sender, EventArgs e)
 		{
 			refreshEmployeeDDL();
 			 
@@ -29,14 +31,7 @@ namespace PaidSickLeaveTracker
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            ConnectDB dbcon = new ConnectDB();
-
-            MySqlCommand updateEmployee = new MySqlCommand("Update Employees SET Name=@name WHERE EmployeeID=@id", dbcon.Connection);
-
-            updateEmployee.Parameters.AddWithValue("@name", employeeNameTxt.Text);
-            updateEmployee.Parameters.AddWithValue("@id", employeeDDL.SelectedValue);
-
-            dbcon.runCommand(updateEmployee);
+            eFun.updateEmployeeName(employeeNameTxt.Text, employeeDDL.SelectedValue);
 
 			int index = employeeDDL.SelectedIndex;
 
@@ -47,13 +42,7 @@ namespace PaidSickLeaveTracker
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            ConnectDB dbcon = new ConnectDB();
-
-            MySqlCommand updateEmployee = new MySqlCommand("Delete From Employees WHERE EmployeeID=@id", dbcon.Connection);
-
-            updateEmployee.Parameters.AddWithValue("@id", employeeDDL.SelectedValue);
-
-            dbcon.runCommand(updateEmployee);
+            eFun.removeEmployee(employeeDDL.SelectedValue);
 
 			employeeNameTxt.Text = "";
 
@@ -69,9 +58,7 @@ namespace PaidSickLeaveTracker
 
 		private void refreshEmployeeDDL()
 		{
-            Functions fun = new Functions();
-
-            fun.fillEmployeeDDL(ref employeeDDL);
+            eFun.fillEmployeeDDL(ref employeeDDL);
         }
 	}
 }
