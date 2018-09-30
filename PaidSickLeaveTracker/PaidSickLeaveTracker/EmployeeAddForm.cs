@@ -28,6 +28,7 @@ namespace PaidSickLeaveTracker
 
 			db.runCommand(cmd);
 
+            outputLabel.Text = employeeNameTxt.Text + " Added";
 
 			employeeNameTxt.Text = "";
 		}

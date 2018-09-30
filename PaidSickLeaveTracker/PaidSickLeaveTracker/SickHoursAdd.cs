@@ -31,6 +31,8 @@ namespace PaidSickLeaveTracker
 			employeeDDL.DataSource = dt;
 			employeeDDL.DisplayMember = "Name";
 			employeeDDL.ValueMember = "EmployeeID";
+
+            refreshSickHoursView();
 		}
 
 		private void AddButton_Click(object sender, EventArgs e)
@@ -45,5 +47,20 @@ namespace PaidSickLeaveTracker
 
 			db.runCommand(cmd);
 		}
+
+
+        private void refreshSickHoursView()
+        {
+            ConnectDB dbcon = new ConnectDB();
+            Functions fun = new Functions();
+
+            MySqlDataAdapter selectEmployeesWorkedHours = new MySqlDataAdapter("SELECT Name, Total_Used_Hours, (Hours_Left/40-Total_Used_Hours) As Sick_Hours_Left "+
+                "From (SELECT Employees.EmployeeID, Employees.Name, SUM(SickHours.SickHoursUsed) As Total_Used_Hours FROM SickHours JOIN Employees on SickHours.EmployeeID = Employees.EmployeeID WHERE SickHours.EmployeeID=2) t1 "+
+                "JOIN (SELECT WorkedHours.EmployeeID, Hours As Hours_Left From WorkedHours WHERE EmployeeID=@id) t2 on t1.EmployeeID = t2.EmployeeID", dbcon.Connection);
+
+            selectEmployeesWorkedHours.SelectCommand.Parameters.AddWithValue("@id", employeeDDL.SelectedValue);
+
+            fun.fillGridView(selectEmployeesWorkedHours, ref sickHourGV);
+        }
 	}
 }
