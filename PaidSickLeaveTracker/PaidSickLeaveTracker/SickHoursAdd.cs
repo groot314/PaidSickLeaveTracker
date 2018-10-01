@@ -36,6 +36,10 @@ namespace PaidSickLeaveTracker
         private void AddButton_Click(object sender, EventArgs e)
 		{
             sfun.addSickHours(Convert.ToDouble(hoursTxt.Text), datePicker.Value.Date.ToString("yyyy-MM-dd"), employeeDDL.SelectedValue);
+
+            hoursTxt.Text = "";
+
+            refreshSickHoursView();
 		}
 
 
