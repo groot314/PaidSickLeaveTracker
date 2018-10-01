@@ -50,7 +50,9 @@ namespace PaidSickLeaveTracker
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-
+            sfun.deleteSickHours(datesDDL.SelectedValue);
+            refreshDates();
+            refreshHours();
         }
 
         private void refreshDates()

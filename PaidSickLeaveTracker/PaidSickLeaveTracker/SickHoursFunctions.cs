@@ -26,6 +26,15 @@ namespace PaidSickLeaveTracker
             dbCon.runCommand(cmd);
         }
 
+        public void deleteSickHours(object id)
+        {
+            MySqlCommand cmd = new MySqlCommand("Delete From SickHours WHERE SickID=@id", dbCon.Connection);
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            dbCon.runCommand(cmd);
+        }
+
         public void updateSickHours(double hours, object id)
         {
             MySqlCommand updateHours = new MySqlCommand("Update SickHours SET SickHoursUsed=@hours WHERE SickID=@id", dbCon.Connection);
