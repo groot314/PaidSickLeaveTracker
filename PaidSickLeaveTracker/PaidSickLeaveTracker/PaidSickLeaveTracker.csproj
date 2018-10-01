@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarryOverSickHoursAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarryOverSickHoursAdd.Designer.cs">
+      <DependentUpon>CarryOverSickHoursAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectDB.cs" />
     <Compile Include="EmployeeAddForm.cs">
       <SubType>Form</SubType>
@@ -97,6 +103,9 @@
       <DependentUpon>WorkedHoursEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkedHoursFunctions.cs" />
+    <EmbeddedResource Include="CarryOverSickHoursAdd.resx">
+      <DependentUpon>CarryOverSickHoursAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeAddForm.resx">
       <DependentUpon>EmployeeAddForm.cs</DependentUpon>
     </EmbeddedResource>

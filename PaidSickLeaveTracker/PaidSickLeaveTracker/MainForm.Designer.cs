@@ -28,131 +28,142 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.workedHourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.sickHoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.addToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-			this.editToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-			this.menuStrip1.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// menuStrip1
-			// 
-			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.workedHourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sickHoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.addAddionalSickHoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.employeeToolStripMenuItem,
             this.workedHourToolStripMenuItem,
             this.sickHoursToolStripMenuItem});
-			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(522, 28);
-			this.menuStrip1.TabIndex = 0;
-			this.menuStrip1.Text = "menuStrip1";
-			// 
-			// fileToolStripMenuItem
-			// 
-			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(392, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshToolStripMenuItem});
-			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-			this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
-			this.fileToolStripMenuItem.Text = "File";
-			// 
-			// refreshToolStripMenuItem
-			// 
-			this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-			this.refreshToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
-			this.refreshToolStripMenuItem.Text = "Refresh";
-			// 
-			// employeeToolStripMenuItem
-			// 
-			this.employeeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            // 
+            // employeeToolStripMenuItem
+            // 
+            this.employeeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem,
             this.editToolStripMenuItem});
-			this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-			this.employeeToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
-			this.employeeToolStripMenuItem.Text = "Employee";
-			// 
-			// addToolStripMenuItem
-			// 
-			this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-			this.addToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-			this.addToolStripMenuItem.Text = "Add";
-			this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
-			// 
-			// editToolStripMenuItem
-			// 
-			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-			this.editToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-			this.editToolStripMenuItem.Text = "Edit";
-			this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
-			// 
-			// workedHourToolStripMenuItem
-			// 
-			this.workedHourToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.employeeToolStripMenuItem.Text = "Employee";
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // workedHourToolStripMenuItem
+            // 
+            this.workedHourToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem1,
             this.editToolStripMenuItem1});
-			this.workedHourToolStripMenuItem.Name = "workedHourToolStripMenuItem";
-			this.workedHourToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
-			this.workedHourToolStripMenuItem.Text = "Worked Hour";
-			// 
-			// addToolStripMenuItem1
-			// 
-			this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-			this.addToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
-			this.addToolStripMenuItem1.Text = "Add";
-			this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
-			// 
-			// editToolStripMenuItem1
-			// 
-			this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-			this.editToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
-			this.editToolStripMenuItem1.Text = "Edit";
-			this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
-			// 
-			// sickHoursToolStripMenuItem
-			// 
-			this.sickHoursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.workedHourToolStripMenuItem.Name = "workedHourToolStripMenuItem";
+            this.workedHourToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.workedHourToolStripMenuItem.Text = "Worked Hour";
+            // 
+            // addToolStripMenuItem1
+            // 
+            this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(96, 22);
+            this.addToolStripMenuItem1.Text = "Add";
+            this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
+            // 
+            // editToolStripMenuItem1
+            // 
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(96, 22);
+            this.editToolStripMenuItem1.Text = "Edit";
+            this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
+            // 
+            // sickHoursToolStripMenuItem
+            // 
+            this.sickHoursToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addAddionalSickHoursToolStripMenuItem,
             this.addToolStripMenuItem2,
             this.editToolStripMenuItem2});
-			this.sickHoursToolStripMenuItem.Name = "sickHoursToolStripMenuItem";
-			this.sickHoursToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
-			this.sickHoursToolStripMenuItem.Text = "Sick Hours";
-			// 
-			// addToolStripMenuItem2
-			// 
-			this.addToolStripMenuItem2.Name = "addToolStripMenuItem2";
-			this.addToolStripMenuItem2.Size = new System.Drawing.Size(181, 26);
-			this.addToolStripMenuItem2.Text = "Add";
-			this.addToolStripMenuItem2.Click += new System.EventHandler(this.addToolStripMenuItem2_Click);
-			// 
-			// editToolStripMenuItem2
-			// 
-			this.editToolStripMenuItem2.Name = "editToolStripMenuItem2";
-			this.editToolStripMenuItem2.Size = new System.Drawing.Size(181, 26);
-			this.editToolStripMenuItem2.Text = "Edit";
-			this.editToolStripMenuItem2.Click += new System.EventHandler(this.editToolStripMenuItem2_Click);
-			// 
-			// MainForm
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(522, 471);
-			this.Controls.Add(this.menuStrip1);
-			this.MainMenuStrip = this.menuStrip1;
-			this.Name = "MainForm";
-			this.Text = "Paid Sick Leave Tracker";
-			this.menuStrip1.ResumeLayout(false);
-			this.menuStrip1.PerformLayout();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.sickHoursToolStripMenuItem.Name = "sickHoursToolStripMenuItem";
+            this.sickHoursToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.sickHoursToolStripMenuItem.Text = "Sick Hours";
+            // 
+            // addToolStripMenuItem2
+            // 
+            this.addToolStripMenuItem2.Name = "addToolStripMenuItem2";
+            this.addToolStripMenuItem2.Size = new System.Drawing.Size(206, 22);
+            this.addToolStripMenuItem2.Text = "Add Used Hours";
+            this.addToolStripMenuItem2.Click += new System.EventHandler(this.addToolStripMenuItem2_Click);
+            // 
+            // editToolStripMenuItem2
+            // 
+            this.editToolStripMenuItem2.Name = "editToolStripMenuItem2";
+            this.editToolStripMenuItem2.Size = new System.Drawing.Size(206, 22);
+            this.editToolStripMenuItem2.Text = "Edit";
+            this.editToolStripMenuItem2.Click += new System.EventHandler(this.editToolStripMenuItem2_Click);
+            // 
+            // addAddionalSickHoursToolStripMenuItem
+            // 
+            this.addAddionalSickHoursToolStripMenuItem.Name = "addAddionalSickHoursToolStripMenuItem";
+            this.addAddionalSickHoursToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.addAddionalSickHoursToolStripMenuItem.Text = "Add Carry Over Hours";
+            this.addAddionalSickHoursToolStripMenuItem.Click += new System.EventHandler(this.addAddionalSickHoursToolStripMenuItem_Click);
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(392, 383);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "MainForm";
+            this.Text = "Paid Sick Leave Tracker";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
@@ -170,6 +181,7 @@
 		private System.Windows.Forms.ToolStripMenuItem sickHoursToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem2;
 		private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem2;
-	}
+        private System.Windows.Forms.ToolStripMenuItem addAddionalSickHoursToolStripMenuItem;
+    }
 }
 

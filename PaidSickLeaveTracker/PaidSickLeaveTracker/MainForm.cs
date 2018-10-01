@@ -52,5 +52,11 @@ namespace PaidSickLeaveTracker
 			SickHoursEdit she = new SickHoursEdit();
 			she.Show();
 		}
-	}
+
+        private void addAddionalSickHoursToolStripMenuItem_Click(object sender, EventArgs e)//add addional or carryover hours
+        {
+            CarryOverSickHoursAdd cosh = new CarryOverSickHoursAdd();
+            cosh.Show();
+        }
+    }
 }

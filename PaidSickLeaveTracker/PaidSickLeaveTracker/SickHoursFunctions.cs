@@ -12,6 +12,7 @@ namespace PaidSickLeaveTracker
     class SickHoursFunctions
     {
         private ConnectDB dbCon = new ConnectDB();
+        private DataFunctions dfun = new DataFunctions();
 
         public void addSickHours(double hours, string date, object id)
         {
@@ -49,6 +50,30 @@ namespace PaidSickLeaveTracker
             datesDDL.DataSource = dt;
             datesDDL.DisplayMember = "SickDate";
             datesDDL.ValueMember = "SickID";
+        }
+
+        public void addAdditionSickHours(double hours, string year, object id)
+        {
+            MySqlDataAdapter selectRow = new MySqlDataAdapter("Select AddID From AdditionalSickHours WHERE EmployeeID=@id AND Year=@year", dbCon.Connection);
+            selectRow.SelectCommand.Parameters.AddWithValue("@id", id);
+            selectRow.SelectCommand.Parameters.AddWithValue("@year", year);
+
+            if (dfun.rowExists(ref selectRow))
+            {
+                MySqlCommand updateAddionalHours = new MySqlCommand("Update AdditionalSickHours SET Hours=@hours WHERE EmployeeID=@id AND Year=@year", dbCon.Connection);
+                updateAddionalHours.Parameters.AddWithValue("@id", id);
+                updateAddionalHours.Parameters.AddWithValue("@hours", hours);
+                updateAddionalHours.Parameters.AddWithValue("@year", year);
+                dbCon.runCommand(updateAddionalHours);
+            }
+            else
+            {
+                MySqlCommand insertAddionalHours = new MySqlCommand("Insert Into AdditionalSickHours (EmployeeID, Year, Hours) Values (@id, @year, @hours)", dbCon.Connection);
+                insertAddionalHours.Parameters.AddWithValue("@id", id);
+                insertAddionalHours.Parameters.AddWithValue("@hours", hours);
+                insertAddionalHours.Parameters.AddWithValue("@year", year);
+                dbCon.runCommand(insertAddionalHours);
+            }
         }
 
         public void fillHoursTextbox(ref TextBox hoursTxt, object employeeID, object sickID)

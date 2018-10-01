@@ -68,9 +68,9 @@
             this.AddButton.Location = new System.Drawing.Point(367, 48);
             this.AddButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(56, 19);
+            this.AddButton.Size = new System.Drawing.Size(84, 19);
             this.AddButton.TabIndex = 8;
-            this.AddButton.Text = "Add";
+            this.AddButton.Text = "Add Used";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 

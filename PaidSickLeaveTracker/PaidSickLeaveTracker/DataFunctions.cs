@@ -23,5 +23,14 @@ namespace PaidSickLeaveTracker
 
             gv.DataSource = dt;
         }
+
+        public bool rowExists(ref MySqlDataAdapter selectCmd)
+        {
+            DataTable dt = new DataTable();
+            selectCmd.Fill(dt);
+
+            return dt.Rows.Count > 0;
+        }
+
     }
 }
