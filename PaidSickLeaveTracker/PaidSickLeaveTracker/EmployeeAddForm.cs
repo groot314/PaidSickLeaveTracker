@@ -18,8 +18,12 @@ namespace PaidSickLeaveTracker
 			InitializeComponent();
 		}
 
+        EmployeeFunctions efun = new EmployeeFunctions();
+
         private void employeeAddButton_Click(object sender, EventArgs e)
 		{
+            efun.addEmployee(employeeNameTxt.Text);
+
             outputLabel.Text = employeeNameTxt.Text + " Added";
 
 			employeeNameTxt.Text = "";

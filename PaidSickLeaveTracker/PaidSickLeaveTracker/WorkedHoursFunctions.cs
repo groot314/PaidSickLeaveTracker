@@ -50,6 +50,16 @@ namespace PaidSickLeaveTracker
                     addSickHours.Parameters.AddWithValue("@year", year);
 
                     dbcon.runCommand(addSickHours);
+
+
+                    //add row for AddionalSickHours
+                    //since join commands will depend on these rows
+                    MySqlCommand insertRowAddionalSickHours = new MySqlCommand("Insert Into AdditionalSickHours (EmployeeID, Year, Hours) Values (@id, @year, 0)", dbcon.Connection);
+
+                    insertRowAddionalSickHours.Parameters.AddWithValue("@id", id);
+                    insertRowAddionalSickHours.Parameters.AddWithValue("@year", year);
+
+                    dbcon.runCommand(insertRowAddionalSickHours);
                 }
                 else//update row since a row does exist
                 {

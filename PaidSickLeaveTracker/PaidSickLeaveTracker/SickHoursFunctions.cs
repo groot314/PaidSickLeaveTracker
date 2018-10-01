@@ -79,9 +79,9 @@ namespace PaidSickLeaveTracker
             DataFunctions dfun = new DataFunctions();
 
             //Name, Total_Used_Hours, Sick_Hours_Left
-            MySqlDataAdapter selectEmployeesWorkedHours = new MySqlDataAdapter("SELECT Name, Total_Used_Hours, (Hours_Left/40-Total_Used_Hours) As Sick_Hours_Left " +
-                "From (SELECT Employees.EmployeeID, Employees.Name, SUM(SickHours.SickHoursUsed) As Total_Used_Hours FROM SickHours JOIN Employees on SickHours.EmployeeID = Employees.EmployeeID WHERE SickHours.EmployeeID=2) t1 " +
-                "JOIN (SELECT WorkedHours.EmployeeID, Hours As Hours_Left From WorkedHours WHERE EmployeeID=@id) t2 on t1.EmployeeID = t2.EmployeeID", dbCon.Connection);
+            MySqlDataAdapter selectEmployeesWorkedHours = new MySqlDataAdapter("SELECT Name, Total_Used_Hours, Sick_Hours_Left+Hours As Sick_Hours_Left From Employees_Hours_Left_CurrentYear "+
+                "Join AdditionalSickHours on Employees_Hours_Left_CurrentYear.EmployeeID = AdditionalSickHours.EmployeeID "+
+                "WHERE Employees_Hours_Left_CurrentYear.EmployeeID = @id AND AdditionalSickHours.Year = Year(CURRENT_TIMESTAMP())", dbCon.Connection);
 
             selectEmployeesWorkedHours.SelectCommand.Parameters.AddWithValue("@id", id);
 
