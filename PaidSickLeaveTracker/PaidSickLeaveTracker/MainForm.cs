@@ -17,6 +17,8 @@ namespace PaidSickLeaveTracker
 			InitializeComponent();
 		}
 
+        ViewFunctions vfun = new ViewFunctions();
+
 		private void addToolStripMenuItem_Click(object sender, EventArgs e)//employee add
 		{
 			EmployeeAddForm eaf = new EmployeeAddForm();
@@ -57,6 +59,11 @@ namespace PaidSickLeaveTracker
         {
             CarryOverSickHoursAdd cosh = new CarryOverSickHoursAdd();
             cosh.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            vfun.mainView(ref mainGV);
         }
     }
 }

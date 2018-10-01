@@ -90,6 +90,7 @@
     <Compile Include="SickHoursEdit.Designer.cs">
       <DependentUpon>SickHoursEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewFunctions.cs" />
     <Compile Include="WorkedHoursAdd.cs">
       <SubType>Form</SubType>
     </Compile>
