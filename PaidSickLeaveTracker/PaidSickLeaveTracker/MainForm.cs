@@ -63,7 +63,12 @@ namespace PaidSickLeaveTracker
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            vfun.mainView(ref mainGV);
+            vfun.mainView(ref mainGV, searchTxt.Text);
+        }
+
+        private void searchTxt_TextChanged(object sender, EventArgs e)
+        {
+            vfun.mainView(ref mainGV, searchTxt.Text);
         }
     }
 }

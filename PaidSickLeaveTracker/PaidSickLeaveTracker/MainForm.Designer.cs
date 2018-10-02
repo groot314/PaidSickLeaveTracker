@@ -42,6 +42,8 @@
             this.addToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainGV = new System.Windows.Forms.DataGridView();
+            this.searchTxt = new System.Windows.Forms.TextBox();
+            this.searchLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainGV)).BeginInit();
             this.SuspendLayout();
@@ -163,11 +165,30 @@
             this.mainGV.Size = new System.Drawing.Size(432, 207);
             this.mainGV.TabIndex = 1;
             // 
+            // searchTxt
+            // 
+            this.searchTxt.Location = new System.Drawing.Point(63, 148);
+            this.searchTxt.Name = "searchTxt";
+            this.searchTxt.Size = new System.Drawing.Size(100, 20);
+            this.searchTxt.TabIndex = 2;
+            this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
+            // 
+            // searchLabel
+            // 
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.Location = new System.Drawing.Point(13, 151);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(44, 13);
+            this.searchLabel.TabIndex = 3;
+            this.searchLabel.Text = "Search:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(432, 381);
+            this.Controls.Add(this.searchLabel);
+            this.Controls.Add(this.searchTxt);
             this.Controls.Add(this.mainGV);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -199,6 +220,8 @@
 		private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem addAddionalSickHoursToolStripMenuItem;
         private System.Windows.Forms.DataGridView mainGV;
+        private System.Windows.Forms.TextBox searchTxt;
+        private System.Windows.Forms.Label searchLabel;
     }
 }
 
