@@ -1,6 +1,6 @@
 ﻿namespace PaidSickLeaveTracker
 {
-    partial class CarryOverSickHoursAdd
+    partial class CarryOverSickHoursSet
     {
         /// <summary>
         /// Required designer variable.

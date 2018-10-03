@@ -26,5 +26,27 @@ namespace PaidSickLeaveTracker
 
             dfun.fillGridView(selectEmployeesWorkedHours, ref gv);
         }
+
+		public void viewEmployeesSearch(ref DataGridView gv, string name)
+		{
+			DataFunctions dfun = new DataFunctions();
+
+			MySqlDataAdapter selectEmployeesWorkedHours = new MySqlDataAdapter("SELECT Name From Employees Where Name LIKE @name", dbCon.Connection);
+
+			selectEmployeesWorkedHours.SelectCommand.Parameters.AddWithValue("@name", "%" + name + "%");
+
+			dfun.fillGridView(selectEmployeesWorkedHours, ref gv);
+		}
+
+		public void viewWorkedHoursSearch(ref DataGridView gv, string name)
+		{
+			DataFunctions dfun = new DataFunctions();
+
+			MySqlDataAdapter selectEmployeesWorkedHours = new MySqlDataAdapter("SELECT Name, Hours From Employees Join WorkedHours on Employees.EmployeeID = WorkedHours.EmployeeID Where Name Like @name", dbCon.Connection);
+
+			selectEmployeesWorkedHours.SelectCommand.Parameters.AddWithValue("@name", "%" + name + "%");
+
+			dfun.fillGridView(selectEmployeesWorkedHours, ref gv);
+		}
     }
 }

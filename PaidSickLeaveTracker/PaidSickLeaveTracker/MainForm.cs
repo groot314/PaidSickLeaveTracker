@@ -57,18 +57,40 @@ namespace PaidSickLeaveTracker
 
         private void addAddionalSickHoursToolStripMenuItem_Click(object sender, EventArgs e)//add addional or carryover hours
         {
-            CarryOverSickHoursAdd cosh = new CarryOverSickHoursAdd();
+            CarryOverSickHoursSet cosh = new CarryOverSickHoursSet();
             cosh.Show();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+		private void MainForm_Load(object sender, EventArgs e)
         {
-            vfun.mainView(ref mainGV, searchTxt.Text);
+			refreshView();
         }
 
         private void searchTxt_TextChanged(object sender, EventArgs e)
         {
-            vfun.mainView(ref mainGV, searchTxt.Text);
+			refreshView();
         }
-    }
+
+		private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			refreshView();
+		}
+
+		private void refreshView()
+		{
+			vfun.mainView(ref mainGV, searchTxt.Text);
+		}
+
+		private void viewAllToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			EmployeesView ev = new EmployeesView();
+			ev.Show();
+		}
+
+		private void viewAllToolStripMenuItem1_Click(object sender, EventArgs e)
+		{
+			WorkedHoursView whv = new WorkedHoursView();
+			whv.Show();
+		}
+	}
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PaidSickLeaveTracker
 {
-    public partial class CarryOverSickHoursAdd : Form
+    public partial class CarryOverSickHoursSet : Form
     {
-        public CarryOverSickHoursAdd()
+        public CarryOverSickHoursSet()
         {
             InitializeComponent();
             yearSelect.CustomFormat = "yyyy";
@@ -29,7 +29,7 @@ namespace PaidSickLeaveTracker
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            sfun.addAdditionSickHours(Convert.ToDouble(hourTxt.Text), yearSelect.Value.ToString("yyyy"), employeeDDL.SelectedValue);
+            sfun.setAdditionSickHours(Convert.ToDouble(hourTxt.Text), yearSelect.Value.ToString("yyyy"), employeeDDL.SelectedValue);
 
             outputLabel.Text = hourTxt.Text + " hours set for " + yearSelect.Value.ToString("yyyy");
         }

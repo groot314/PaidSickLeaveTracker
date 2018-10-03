@@ -61,7 +61,7 @@ namespace PaidSickLeaveTracker
             datesDDL.ValueMember = "SickID";
         }
 
-        public void addAdditionSickHours(double hours, string year, object id)
+        public void setAdditionSickHours(double hours, string year, object id)
         {
             MySqlDataAdapter selectRow = new MySqlDataAdapter("Select AddID From AdditionalSickHours WHERE EmployeeID=@id AND Year=@year", dbCon.Connection);
             selectRow.SelectCommand.Parameters.AddWithValue("@id", id);

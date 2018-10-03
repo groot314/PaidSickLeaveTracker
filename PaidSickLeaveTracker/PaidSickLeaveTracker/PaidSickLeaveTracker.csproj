@@ -48,11 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarryOverSickHoursAdd.cs">
+    <Compile Include="CarryOverSickHoursSet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarryOverSickHoursAdd.Designer.cs">
-      <DependentUpon>CarryOverSickHoursAdd.cs</DependentUpon>
+    <Compile Include="CarryOverSickHoursSet.Designer.cs">
+      <DependentUpon>CarryOverSickHoursSet.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectDB.cs" />
     <Compile Include="EmployeeAddForm.cs">
@@ -69,6 +69,12 @@
     </Compile>
     <Compile Include="EmployeeFunctions.cs" />
     <Compile Include="DataFunctions.cs" />
+    <Compile Include="EmployeesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeesView.Designer.cs">
+      <DependentUpon>EmployeesView.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,14 +110,23 @@
       <DependentUpon>WorkedHoursEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="WorkedHoursFunctions.cs" />
-    <EmbeddedResource Include="CarryOverSickHoursAdd.resx">
-      <DependentUpon>CarryOverSickHoursAdd.cs</DependentUpon>
+    <Compile Include="WorkedHoursView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkedHoursView.Designer.cs">
+      <DependentUpon>WorkedHoursView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CarryOverSickHoursSet.resx">
+      <DependentUpon>CarryOverSickHoursSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeAddForm.resx">
       <DependentUpon>EmployeeAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeEditForm.resx">
       <DependentUpon>EmployeeEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeesView.resx">
+      <DependentUpon>EmployeesView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -136,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WorkedHoursEdit.resx">
       <DependentUpon>WorkedHoursEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkedHoursView.resx">
+      <DependentUpon>WorkedHoursView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
