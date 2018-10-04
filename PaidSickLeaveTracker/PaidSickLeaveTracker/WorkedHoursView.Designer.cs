@@ -28,8 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkedHoursView));
 			this.workedHoursGV = new System.Windows.Forms.DataGridView();
 			this.searchTxt = new System.Windows.Forms.TextBox();
+			this.searchLabel = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.workedHoursGV)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -47,19 +49,30 @@
 			// 
 			// searchTxt
 			// 
-			this.searchTxt.Location = new System.Drawing.Point(56, 25);
+			this.searchTxt.Location = new System.Drawing.Point(76, 25);
 			this.searchTxt.Name = "searchTxt";
 			this.searchTxt.Size = new System.Drawing.Size(100, 22);
 			this.searchTxt.TabIndex = 2;
 			this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
+			// 
+			// searchLabel
+			// 
+			this.searchLabel.AutoSize = true;
+			this.searchLabel.Location = new System.Drawing.Point(13, 25);
+			this.searchLabel.Name = "searchLabel";
+			this.searchLabel.Size = new System.Drawing.Size(57, 17);
+			this.searchLabel.TabIndex = 3;
+			this.searchLabel.Text = "Search:";
 			// 
 			// WorkedHoursView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(594, 355);
+			this.Controls.Add(this.searchLabel);
 			this.Controls.Add(this.searchTxt);
 			this.Controls.Add(this.workedHoursGV);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "WorkedHoursView";
 			this.Text = "WorkedHoursView";
 			this.Load += new System.EventHandler(this.WorkedHoursView_Load);
@@ -73,5 +86,6 @@
 
 		private System.Windows.Forms.DataGridView workedHoursGV;
 		private System.Windows.Forms.TextBox searchTxt;
+		private System.Windows.Forms.Label searchLabel;
 	}
 }

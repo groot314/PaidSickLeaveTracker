@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\mainIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -139,6 +142,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SickHoursAdd.resx">
       <DependentUpon>SickHoursAdd.cs</DependentUpon>
@@ -167,6 +171,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="43080697_476829889389542_7151215140199727104_n_YjE_icon.ico" />
+    <None Include="Resources\mainNamedLogo.png" />
+    <None Include="Resources\mainIcon.ico" />
+    <None Include="Resources\43080697_476829889389542_7151215140199727104_n_YjE_icon.ico" />
+    <None Include="Resources\Icon.ico" />
+    <None Include="Resources\43070491_237601680440000_5249041439823757312_n.png" />
+    <None Include="Resources\sickLeaveMainLogo.png" />
+    <None Include="Resources\MainLogo.png" />
+    <Content Include="sickLeaveMainLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

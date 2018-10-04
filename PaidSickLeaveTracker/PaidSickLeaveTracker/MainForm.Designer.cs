@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,8 +47,10 @@
 			this.mainGV = new System.Windows.Forms.DataGridView();
 			this.searchTxt = new System.Windows.Forms.TextBox();
 			this.searchLabel = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.mainGV)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -93,21 +96,21 @@
 			// addToolStripMenuItem
 			// 
 			this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-			this.addToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+			this.addToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
 			this.addToolStripMenuItem.Text = "Add";
 			this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
 			// 
 			// editToolStripMenuItem
 			// 
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-			this.editToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+			this.editToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
 			this.editToolStripMenuItem.Text = "Edit";
 			this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
 			// 
 			// viewAllToolStripMenuItem
 			// 
 			this.viewAllToolStripMenuItem.Name = "viewAllToolStripMenuItem";
-			this.viewAllToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+			this.viewAllToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
 			this.viewAllToolStripMenuItem.Text = "View All";
 			this.viewAllToolStripMenuItem.Click += new System.EventHandler(this.viewAllToolStripMenuItem_Click);
 			// 
@@ -124,21 +127,21 @@
 			// addToolStripMenuItem1
 			// 
 			this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-			this.addToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+			this.addToolStripMenuItem1.Size = new System.Drawing.Size(138, 26);
 			this.addToolStripMenuItem1.Text = "Add";
 			this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
 			// 
 			// editToolStripMenuItem1
 			// 
 			this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-			this.editToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+			this.editToolStripMenuItem1.Size = new System.Drawing.Size(138, 26);
 			this.editToolStripMenuItem1.Text = "Edit";
 			this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
 			// 
 			// viewAllToolStripMenuItem1
 			// 
 			this.viewAllToolStripMenuItem1.Name = "viewAllToolStripMenuItem1";
-			this.viewAllToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+			this.viewAllToolStripMenuItem1.Size = new System.Drawing.Size(138, 26);
 			this.viewAllToolStripMenuItem1.Text = "View All";
 			this.viewAllToolStripMenuItem1.Click += new System.EventHandler(this.viewAllToolStripMenuItem1_Click);
 			// 
@@ -204,6 +207,16 @@
 			this.searchLabel.TabIndex = 3;
 			this.searchLabel.Text = "Search:";
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::PaidSickLeaveTracker.Properties.Resources.mainNamedLogo;
+			this.pictureBox1.Location = new System.Drawing.Point(218, 0);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(375, 278);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 4;
+			this.pictureBox1.TabStop = false;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,6 +226,8 @@
 			this.Controls.Add(this.searchTxt);
 			this.Controls.Add(this.mainGV);
 			this.Controls.Add(this.menuStrip1);
+			this.Controls.Add(this.pictureBox1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
 			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Name = "MainForm";
@@ -221,6 +236,7 @@
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.mainGV)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -246,6 +262,7 @@
         private System.Windows.Forms.Label searchLabel;
 		private System.Windows.Forms.ToolStripMenuItem viewAllToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem viewAllToolStripMenuItem1;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }
 

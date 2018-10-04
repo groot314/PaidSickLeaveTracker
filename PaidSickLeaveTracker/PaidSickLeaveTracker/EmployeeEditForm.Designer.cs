@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeEditForm));
 			this.removeButton = new System.Windows.Forms.Button();
 			this.EditButton = new System.Windows.Forms.Button();
 			this.employeeNameTxt = new System.Windows.Forms.TextBox();
@@ -84,6 +85,7 @@
 			this.Controls.Add(this.removeButton);
 			this.Controls.Add(this.EditButton);
 			this.Controls.Add(this.employeeNameTxt);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Name = "EmployeeEditForm";
 			this.Text = "EditEmployeeForm";

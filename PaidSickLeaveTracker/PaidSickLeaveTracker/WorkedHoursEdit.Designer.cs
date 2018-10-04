@@ -28,65 +28,69 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.EditButton = new System.Windows.Forms.Button();
-            this.employeeDDL = new System.Windows.Forms.ComboBox();
-            this.workedHoursTxt = new System.Windows.Forms.TextBox();
-            this.yearSelect = new System.Windows.Forms.DateTimePicker();
-            this.SuspendLayout();
-            // 
-            // EditButton
-            // 
-            this.EditButton.Location = new System.Drawing.Point(417, 118);
-            this.EditButton.Margin = new System.Windows.Forms.Padding(2);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(56, 19);
-            this.EditButton.TabIndex = 8;
-            this.EditButton.Text = "Edit";
-            this.EditButton.UseVisualStyleBackColor = true;
-            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
-            // 
-            // employeeDDL
-            // 
-            this.employeeDDL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.employeeDDL.FormattingEnabled = true;
-            this.employeeDDL.Location = new System.Drawing.Point(9, 115);
-            this.employeeDDL.Margin = new System.Windows.Forms.Padding(2);
-            this.employeeDDL.Name = "employeeDDL";
-            this.employeeDDL.Size = new System.Drawing.Size(92, 21);
-            this.employeeDDL.TabIndex = 5;
-            this.employeeDDL.SelectedIndexChanged += new System.EventHandler(this.employeeDDL_SelectedIndexChanged);
-            // 
-            // workedHoursTxt
-            // 
-            this.workedHoursTxt.Location = new System.Drawing.Point(312, 117);
-            this.workedHoursTxt.Name = "workedHoursTxt";
-            this.workedHoursTxt.Size = new System.Drawing.Size(100, 20);
-            this.workedHoursTxt.TabIndex = 10;
-            // 
-            // yearSelect
-            // 
-            this.yearSelect.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.yearSelect.Location = new System.Drawing.Point(106, 116);
-            this.yearSelect.Name = "yearSelect";
-            this.yearSelect.Size = new System.Drawing.Size(200, 20);
-            this.yearSelect.TabIndex = 11;
-            this.yearSelect.ValueChanged += new System.EventHandler(this.yearSelect_ValueChanged);
-            // 
-            // WorkedHoursEdit
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 267);
-            this.Controls.Add(this.yearSelect);
-            this.Controls.Add(this.workedHoursTxt);
-            this.Controls.Add(this.EditButton);
-            this.Controls.Add(this.employeeDDL);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "WorkedHoursEdit";
-            this.Text = "WorkedHoursEdit";
-            this.Load += new System.EventHandler(this.WorkedHoursEdit_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkedHoursEdit));
+			this.EditButton = new System.Windows.Forms.Button();
+			this.employeeDDL = new System.Windows.Forms.ComboBox();
+			this.workedHoursTxt = new System.Windows.Forms.TextBox();
+			this.yearSelect = new System.Windows.Forms.DateTimePicker();
+			this.SuspendLayout();
+			// 
+			// EditButton
+			// 
+			this.EditButton.Location = new System.Drawing.Point(556, 145);
+			this.EditButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.EditButton.Name = "EditButton";
+			this.EditButton.Size = new System.Drawing.Size(75, 23);
+			this.EditButton.TabIndex = 8;
+			this.EditButton.Text = "Edit";
+			this.EditButton.UseVisualStyleBackColor = true;
+			this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+			// 
+			// employeeDDL
+			// 
+			this.employeeDDL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.employeeDDL.FormattingEnabled = true;
+			this.employeeDDL.Location = new System.Drawing.Point(12, 142);
+			this.employeeDDL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.employeeDDL.Name = "employeeDDL";
+			this.employeeDDL.Size = new System.Drawing.Size(121, 24);
+			this.employeeDDL.TabIndex = 5;
+			this.employeeDDL.SelectedIndexChanged += new System.EventHandler(this.employeeDDL_SelectedIndexChanged);
+			// 
+			// workedHoursTxt
+			// 
+			this.workedHoursTxt.Location = new System.Drawing.Point(416, 144);
+			this.workedHoursTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.workedHoursTxt.Name = "workedHoursTxt";
+			this.workedHoursTxt.Size = new System.Drawing.Size(132, 22);
+			this.workedHoursTxt.TabIndex = 10;
+			// 
+			// yearSelect
+			// 
+			this.yearSelect.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.yearSelect.Location = new System.Drawing.Point(141, 143);
+			this.yearSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.yearSelect.Name = "yearSelect";
+			this.yearSelect.Size = new System.Drawing.Size(265, 22);
+			this.yearSelect.TabIndex = 11;
+			this.yearSelect.ValueChanged += new System.EventHandler(this.yearSelect_ValueChanged);
+			// 
+			// WorkedHoursEdit
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(635, 329);
+			this.Controls.Add(this.yearSelect);
+			this.Controls.Add(this.workedHoursTxt);
+			this.Controls.Add(this.EditButton);
+			this.Controls.Add(this.employeeDDL);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.Name = "WorkedHoursEdit";
+			this.Text = "WorkedHoursEdit";
+			this.Load += new System.EventHandler(this.WorkedHoursEdit_Load);
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 

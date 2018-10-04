@@ -20,7 +20,7 @@ namespace PaidSickLeaveTracker
             //Name, Total_Used_Hours, Sick_Hours_Left
             MySqlDataAdapter selectEmployeesWorkedHours = new MySqlDataAdapter("SELECT Name, Total_Used_Hours, Sick_Hours_Left+Hours As Sick_Hours_Left From Employees_Hours_Left_CurrentYear " +
                 "Join AdditionalSickHours on Employees_Hours_Left_CurrentYear.EmployeeID = AdditionalSickHours.EmployeeID " +
-                "WHERE Employees_Hours_Left_CurrentYear.Name LIKE @name AND AdditionalSickHours.Year = Year(CURRENT_TIMESTAMP())", dbCon.Connection);
+                "WHERE Employees_Hours_Left_CurrentYear.Name LIKE @name AND AdditionalSickHours.Year = Year(CURRENT_TIMESTAMP()) Order By Name", dbCon.Connection);
 
             selectEmployeesWorkedHours.SelectCommand.Parameters.AddWithValue("@name", "%" + name + "%" );
 
@@ -31,7 +31,7 @@ namespace PaidSickLeaveTracker
 		{
 			DataFunctions dfun = new DataFunctions();
 
-			MySqlDataAdapter selectEmployeesWorkedHours = new MySqlDataAdapter("SELECT Name From Employees Where Name LIKE @name", dbCon.Connection);
+			MySqlDataAdapter selectEmployeesWorkedHours = new MySqlDataAdapter("SELECT Name From Employees Where Name LIKE @name Order By Name", dbCon.Connection);
 
 			selectEmployeesWorkedHours.SelectCommand.Parameters.AddWithValue("@name", "%" + name + "%");
 
@@ -42,7 +42,7 @@ namespace PaidSickLeaveTracker
 		{
 			DataFunctions dfun = new DataFunctions();
 
-			MySqlDataAdapter selectEmployeesWorkedHours = new MySqlDataAdapter("SELECT Name, Hours From Employees Join WorkedHours on Employees.EmployeeID = WorkedHours.EmployeeID Where Name Like @name", dbCon.Connection);
+			MySqlDataAdapter selectEmployeesWorkedHours = new MySqlDataAdapter("SELECT Name, Hours From Employees Join WorkedHours on Employees.EmployeeID = WorkedHours.EmployeeID Where Name Like @name Order By Name", dbCon.Connection);
 
 			selectEmployeesWorkedHours.SelectCommand.Parameters.AddWithValue("@name", "%" + name + "%");
 

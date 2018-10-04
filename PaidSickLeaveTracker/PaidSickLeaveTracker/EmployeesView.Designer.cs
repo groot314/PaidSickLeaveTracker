@@ -28,8 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeesView));
 			this.employeesGV = new System.Windows.Forms.DataGridView();
 			this.searchTxt = new System.Windows.Forms.TextBox();
+			this.searchLabel = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.employeesGV)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -47,19 +49,30 @@
 			// 
 			// searchTxt
 			// 
-			this.searchTxt.Location = new System.Drawing.Point(103, 24);
+			this.searchTxt.Location = new System.Drawing.Point(75, 24);
 			this.searchTxt.Name = "searchTxt";
 			this.searchTxt.Size = new System.Drawing.Size(100, 22);
 			this.searchTxt.TabIndex = 1;
 			this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
+			// 
+			// searchLabel
+			// 
+			this.searchLabel.AutoSize = true;
+			this.searchLabel.Location = new System.Drawing.Point(12, 24);
+			this.searchLabel.Name = "searchLabel";
+			this.searchLabel.Size = new System.Drawing.Size(57, 17);
+			this.searchLabel.TabIndex = 2;
+			this.searchLabel.Text = "Search:";
 			// 
 			// EmployeesView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(632, 343);
+			this.Controls.Add(this.searchLabel);
 			this.Controls.Add(this.searchTxt);
 			this.Controls.Add(this.employeesGV);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "EmployeesView";
 			this.Text = "EmployeesView";
 			this.Load += new System.EventHandler(this.EmployeesView_Load);
@@ -73,5 +86,6 @@
 
 		private System.Windows.Forms.DataGridView employeesGV;
 		private System.Windows.Forms.TextBox searchTxt;
+		private System.Windows.Forms.Label searchLabel;
 	}
 }
