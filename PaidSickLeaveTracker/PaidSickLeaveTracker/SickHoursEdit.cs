@@ -44,9 +44,17 @@ namespace PaidSickLeaveTracker
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            sfun.updateSickHours(Convert.ToDouble(hoursTxt.Text), datesDDL.SelectedValue);// hours, and sickHoursID
+			double num;
+			if (double.TryParse(hoursTxt.Text, out num))
+			{
+				sfun.updateSickHours(Convert.ToDouble(hoursTxt.Text), datesDDL.SelectedValue);// hours, and sickHoursID
 
-        }
+			}
+			else
+			{
+				MessageBox.Show("Enter in a numeric number");
+			}
+		}
 
         private void removeButton_Click(object sender, EventArgs e)
         {

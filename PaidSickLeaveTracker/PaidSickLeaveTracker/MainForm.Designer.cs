@@ -190,6 +190,7 @@
 			// 
 			// searchTxt
 			// 
+			this.searchTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.searchTxt.Location = new System.Drawing.Point(79, 230);
 			this.searchTxt.Margin = new System.Windows.Forms.Padding(4);
 			this.searchTxt.Name = "searchTxt";
@@ -199,6 +200,7 @@
 			// 
 			// searchLabel
 			// 
+			this.searchLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.searchLabel.AutoSize = true;
 			this.searchLabel.Location = new System.Drawing.Point(12, 234);
 			this.searchLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -209,6 +211,7 @@
 			// 
 			// pictureBox1
 			// 
+			this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.pictureBox1.Image = global::PaidSickLeaveTracker.Properties.Resources.mainNamedLogo;
 			this.pictureBox1.Location = new System.Drawing.Point(218, 0);
 			this.pictureBox1.Name = "pictureBox1";

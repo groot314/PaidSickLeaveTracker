@@ -25,7 +25,6 @@ namespace PaidSickLeaveTracker
 
         public void removeEmployee(object id)
         {
-
             MySqlCommand updateEmployee = new MySqlCommand("Delete From Employees WHERE EmployeeID=@id", dbcon.Connection);
 
             updateEmployee.Parameters.AddWithValue("@id", id);
@@ -44,7 +43,7 @@ namespace PaidSickLeaveTracker
 
         public void fillEmployeeDDL(ref ComboBox employeeDDL)
         {
-            MySqlDataAdapter selectEmployees = new MySqlDataAdapter("Select * From Employees", dbcon.Connection);
+            MySqlDataAdapter selectEmployees = new MySqlDataAdapter("Select * From Employees Order By Name", dbcon.Connection);
 
             DataTable dt = new DataTable();
 

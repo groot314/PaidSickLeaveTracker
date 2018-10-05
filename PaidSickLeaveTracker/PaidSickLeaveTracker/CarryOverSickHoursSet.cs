@@ -29,9 +29,17 @@ namespace PaidSickLeaveTracker
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            sfun.setAdditionSickHours(Convert.ToDouble(hourTxt.Text), yearSelect.Value.ToString("yyyy"), employeeDDL.SelectedValue);
+			double num;
+			if (double.TryParse(hourTxt.Text, out num)) {
+				sfun.setAdditionSickHours(Convert.ToDouble(hourTxt.Text), yearSelect.Value.ToString("yyyy"), employeeDDL.SelectedValue);
 
-            outputLabel.Text = hourTxt.Text + " hours set for " + yearSelect.Value.ToString("yyyy");
+				outputLabel.Text = hourTxt.Text + " hours set for " + yearSelect.Value.ToString("yyyy");
+
+			}
+			else
+			{
+				MessageBox.Show("Enter in a numeric number");
+			}
         }
     }
 }

@@ -42,11 +42,19 @@ namespace PaidSickLeaveTracker
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            WorkedHoursFunctions.updateWorkedHours.add(Convert.ToDouble(hoursTxt.Text), yearSelect.Value.ToString("yyyy"), employeeDDL.SelectedValue);
+			double num;
+			if (double.TryParse(hoursTxt.Text, out num))
+			{
+				WorkedHoursFunctions.updateWorkedHours.add(Convert.ToDouble(hoursTxt.Text), yearSelect.Value.ToString("yyyy"), employeeDDL.SelectedValue);
 
-			hoursTxt.Text = "";
+				hoursTxt.Text = "";
 
-            refreshViewHours();
+				refreshViewHours();
+			}
+			else
+			{
+				MessageBox.Show("Enter in a numeric number");
+			}
 		}
 
 

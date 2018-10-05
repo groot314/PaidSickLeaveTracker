@@ -22,9 +22,9 @@ namespace PaidSickLeaveTracker
 
         private void employeeAddButton_Click(object sender, EventArgs e)
 		{
-            efun.addEmployee(employeeNameTxt.Text);
+			efun.addEmployee(employeeNameTxt.Text);
 
-            outputLabel.Text = employeeNameTxt.Text + " Added";
+			outputLabel.Text = employeeNameTxt.Text + " Added";
 
 			employeeNameTxt.Text = "";
 		}

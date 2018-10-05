@@ -181,7 +181,6 @@
     <None Include="Resources\43070491_237601680440000_5249041439823757312_n.png" />
     <None Include="Resources\sickLeaveMainLogo.png" />
     <None Include="Resources\MainLogo.png" />
-    <Content Include="sickLeaveMainLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -35,11 +35,20 @@ namespace PaidSickLeaveTracker
 
         private void AddButton_Click(object sender, EventArgs e)
 		{
-            sfun.addSickHours(Convert.ToDouble(hoursTxt.Text), datePicker.Value.Date.ToString("yyyy-MM-dd"), employeeDDL.SelectedValue);
+			double num;
+			if (double.TryParse(hoursTxt.Text, out num))
+			{
+				sfun.addSickHours(Convert.ToDouble(hoursTxt.Text), datePicker.Value.Date.ToString("yyyy-MM-dd"), employeeDDL.SelectedValue);
 
-            hoursTxt.Text = "";
+				hoursTxt.Text = "";
 
-            refreshSickHoursView();
+				refreshSickHoursView();
+
+			}
+			else
+			{
+				MessageBox.Show("Enter in a numeric number");
+			}
 		}
 
 
